@@ -1041,11 +1041,11 @@ canviaIdioma(inicial);
 
 /* ══════════ 5. L'alba: el fons s'aclareix amb l'scroll ══════════ */
 const capcalera = document.getElementById('capcalera');
-const zonaDia = document.getElementById('como');
+const zonaDia = document.getElementById('planes');
 
 function pintaAlba(){
-  const inici = window.innerHeight * 1.9;
-  const final = zonaDia.offsetTop - window.innerHeight * 0.35;
+  const inici = zonaDia.offsetTop - window.innerHeight * 0.9;
+  const final = zonaDia.offsetTop - window.innerHeight * 0.15;
   const p = Math.min(1, Math.max(0, (scrollY - inici) / (final - inici)));
   document.documentElement.style.setProperty('--alba', p.toFixed(3));
   capcalera.classList.toggle('clar', p > 0.62);
