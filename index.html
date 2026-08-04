@@ -226,6 +226,26 @@ header.clar .idioma{border-color:rgba(18,20,43,.18);color:var(--tinta)}
 .targeta-destacada:hover{border-color:var(--menta)}
 .dia .targeta-destacada{border-color:#0F7F55;background:rgba(15,127,85,.05)}
 
+/* ── Graella de serveis amb icones ──────────────────────────────── */
+.graella-serveis{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:1.5rem}
+.targeta-servei{
+  background:var(--superficie);border:1px solid var(--vora);border-radius:18px;
+  padding:1.7rem;transition:border-color .25s, transform .25s;
+}
+.targeta-servei:hover{border-color:rgba(111,227,180,.45);transform:translateY(-3px)}
+.targeta-servei.destacada{border-color:var(--menta);background:rgba(111,227,180,.07)}
+.dia .targeta-servei{background:#fff;border-color:rgba(18,20,43,.1)}
+.dia .targeta-servei.destacada{border-color:#0F7F55;background:rgba(15,127,85,.05)}
+.icona-servei{
+  width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.1rem;color:#fff;
+}
+.icona-servei svg{width:23px;height:23px}
+.targeta-servei h3{font-size:1.05rem;margin-bottom:.55rem}
+.targeta-servei p{font-size:.9rem;color:var(--crema-suau);line-height:1.55}
+.dia .targeta-servei p{color:var(--tinta-suau)}
+.targeta-servei .etiquetes{margin-top:1.1rem}
+
 .marca-hora{font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--ambre);letter-spacing:.1em;display:block;margin-bottom:.7rem}
 
 /* ── Vídeo ───────────────────────────────────────────────────── */
@@ -326,12 +346,13 @@ footer a:hover{color:var(--menta)}
 @media(max-width:900px){
   .hero-graella{grid-template-columns:1fr;gap:2.5rem}
   .g3,.passos,.plans{grid-template-columns:repeat(2,1fr)}
+  .graella-serveis{grid-template-columns:repeat(2,1fr)}
   .contacte{grid-template-columns:1fr}
   .peu-graella{grid-template-columns:1fr 1fr}
   .nav-links{display:none}
 }
 @media(max-width:620px){
-  .g3,.g2,.passos,.plans,.fila,.peu-graella{grid-template-columns:1fr}
+  .g3,.g2,.passos,.plans,.fila,.peu-graella,.graella-serveis{grid-template-columns:1fr}
   .flotant span{display:none}
   .flotant{padding:.95rem}
   section{padding:3.5rem 0}
@@ -407,8 +428,9 @@ footer a:hover{color:var(--menta)}
       <p class="apagat" data-ca="Un resum ràpid de què fem i com queda muntat el sistema." data-en="A quick overview of what we do and how the system is set up.">Un resumen rápido de qué hacemos y cómo queda montado el sistema.</p>
     </div>
     <div class="video-marc apareix">
-      <video controls preload="metadata" playsinline poster="">
-        <source src="sereno-video.mp4" type="video/mp4">
+      <video id="videoSereno" controls preload="metadata" playsinline
+        data-src-es="sereno-video-es.mp4" data-src-ca="sereno-video-ca.mp4" data-src-en="sereno-video-en.mp4">
+        <source id="videoSerenoSource" src="sereno-video-es.mp4" type="video/mp4">
         Tu navegador no soporta la reproducción de vídeo. Puedes escribirnos por WhatsApp para pedir el enlace.
       </video>
     </div>
@@ -466,42 +488,120 @@ footer a:hover{color:var(--menta)}
       <h2 data-ca="Comença pel que més et fa mal. La resta pot esperar." data-en="Start with what hurts most. The rest can wait.">Empieza por lo que más te duele. El resto puede esperar.</h2>
       <p class="apagat" data-ca="Cada mòdul funciona sol. Comences per un i n'afegeixes quan en vegis el resultat, no abans." data-en="Each module works on its own. You start with one and add more when you see results, not before.">Cada módulo funciona solo. Empiezas por uno y añades cuando veas el resultado, no antes.</p>
     </div>
-    <div class="graella g2">
-      <div class="targeta apareix targeta-destacada">
-        <h3 data-ca="Base de dades des de les teves converses de WhatsApp" data-en="Customer database from your WhatsApp conversations">Base de datos desde tus conversaciones de WhatsApp</h3>
-        <p data-ca="Tota la informació que avui està dispersa entre xats i línies de WhatsApp es converteix en una única base de dades estructurada: noms, telèfons, interessos, historial. És el punt de partida per a qualsevol acció de comunicació, i un actiu que es queda amb el teu negoci per sempre, encara que canviï qui atengui el WhatsApp." data-en="Everything that's scattered across chats and WhatsApp lines today becomes a single structured database: names, phone numbers, interests, history. It's the starting point for any communication and an asset that stays with your business forever, even if whoever handles WhatsApp changes." >Toda la información que hoy está dispersa entre chats y líneas de WhatsApp se convierte en una única base de datos estructurada: nombres, teléfonos, intereses, historial. Es el punto de partida para cualquier acción de comunicación, y un activo que se queda con tu negocio para siempre, aunque cambie quién atienda el WhatsApp.</p>
-        <div class="etiquetes"><span class="etiqueta" data-ca="Múltiples línies" data-en="Multiple lines">Múltiples líneas</span><span class="etiqueta" data-ca="Historial complet" data-en="Full history">Historial completo</span><span class="etiqueta">RGPD / Ley 1581</span></div>
+    <div class="graella-serveis apareix">
+
+      <div class="targeta-servei destacada">
+        <div class="icona-servei" style="background:#0EA5A0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 6.1H3M21 12.1H3M21 18.1H3"/><circle cx="20" cy="6" r="2.6" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <h3 data-ca="Base de dades des de WhatsApp" data-en="Database from WhatsApp">Base de datos desde WhatsApp</h3>
+        <p data-ca="Tota la informació que avui està dispersa entre xats i línies de WhatsApp es converteix en una única base de dades: noms, telèfons, interessos, historial. Un actiu que es queda amb el teu negoci per sempre." data-en="Everything scattered across chats and WhatsApp lines today becomes a single database: names, phone numbers, interests, history. An asset that stays with your business forever.">Toda la información que hoy está dispersa entre chats y líneas de WhatsApp se convierte en una única base de datos: nombres, teléfonos, intereses, historial. Un activo que se queda con tu negocio para siempre.</p>
+        <div class="etiquetes">
+          <span class="etiqueta" data-ca="Múltiples línies" data-en="Multiple lines">Múltiples líneas</span>
+          <span class="etiqueta" data-ca="Historial complet" data-en="Full history">Historial completo</span>
+          <span class="etiqueta">RGPD / Ley 1581</span>
+        </div>
       </div>
-      <div class="targeta apareix">
+
+      <div class="targeta-servei">
+        <div class="icona-servei" style="background:#2563EB">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </div>
         <h3 data-ca="Atenció automàtica per WhatsApp" data-en="Automatic WhatsApp support">Atención automática por WhatsApp</h3>
         <p data-ca="Un assistent que respon amb la informació real del teu negoci: preus, horaris, serveis, zona. Si no ho sap, ho diu i t'avisa." data-en="An assistant that answers using your real business information: prices, hours, services, service area. If it doesn't know, it says so and alerts you.">Un asistente que responde con la información real de tu negocio: precios, horarios, servicios, zona. Si no lo sabe, lo dice y te avisa.</p>
-        <div class="etiquetes"><span class="etiqueta">24/7</span><span class="etiqueta" data-ca="Traspàs a persona" data-en="Handover to a human">Traspaso a persona</span><span class="etiqueta" data-ca="Català i castellà" data-en="Catalan and Spanish">Catalán y castellano</span></div>
+        <div class="etiquetes">
+          <span class="etiqueta">24/7</span>
+          <span class="etiqueta" data-ca="Traspàs a persona" data-en="Handover to a human">Traspaso a persona</span>
+          <span class="etiqueta" data-ca="Català i castellà" data-en="Catalan and Spanish">Catalán y castellano</span>
+        </div>
       </div>
-      <div class="targeta apareix">
+
+      <div class="targeta-servei">
+        <div class="icona-servei" style="background:#7C3AED">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
         <h3 data-ca="Qualificació de sol·licituds" data-en="Lead qualification">Cualificación de solicitudes</h3>
         <p data-ca="Pregunta el que cal saber abans de moure't: tipus de feina, superfície, població, terminis i pressupost. Tu només vas a les visites que valen la pena." data-en="It asks what you need to know before you move: type of job, size, location, timing and budget. You only go to the visits worth your time.">Pregunta lo que hace falta saber antes de moverte: tipo de trabajo, superficie, población, plazos y presupuesto. Tú solo vas a las visitas que valen la pena.</p>
-        <div class="etiquetes"><span class="etiqueta" data-ca="Filtre per zona" data-en="Area filter">Filtro por zona</span><span class="etiqueta" data-ca="Fotos i vídeos" data-en="Photos and video">Fotos y vídeos</span></div>
+        <div class="etiquetes">
+          <span class="etiqueta" data-ca="Filtre per zona" data-en="Area filter">Filtro por zona</span>
+          <span class="etiqueta" data-ca="Fotos i vídeos" data-en="Photos and video">Fotos y vídeos</span>
+        </div>
       </div>
-      <div class="targeta apareix">
+
+      <div class="targeta-servei">
+        <div class="icona-servei" style="background:#DB2777">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
         <h3 data-ca="Cites i recordatoris" data-en="Appointments and reminders">Citas y recordatorios</h3>
         <p data-ca="Visites, cites i revisions que cauen soles a la teva agenda, amb avís el dia abans i confirmació d'un toc." data-en="Visits, appointments and follow-ups that land straight in your calendar, with a reminder the day before and one-tap confirmation.">Visitas, citas y revisiones que caen solas en tu agenda, con aviso el día antes y confirmación de un toque.</p>
-        <div class="etiquetes"><span class="etiqueta">Google Calendar</span><span class="etiqueta">Cal.com</span></div>
+        <div class="etiquetes">
+          <span class="etiqueta">Google Calendar</span>
+          <span class="etiqueta">Cal.com</span>
+        </div>
       </div>
-      <div class="targeta apareix">
+
+      <div class="targeta-servei">
+        <div class="icona-servei" style="background:#EA580C">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>
+        </div>
         <h3 data-ca="Pressupostos en minuts" data-en="Quotes in minutes">Presupuestos en minutos</h3>
         <p data-ca="El client explica què vol, el sistema pregunta el que falta i li envia una forquilla o un PDF amb la teva marca. Tu només l'aproves." data-en="The customer explains what they want, the system asks what's missing and sends back a price range or a branded PDF. You just approve it.">El cliente cuenta qué quiere, el sistema pregunta lo que falta y le envía una horquilla o un PDF con tu marca. Tú solo lo apruebas.</p>
-        <div class="etiquetes"><span class="etiqueta">PDF</span><span class="etiqueta" data-ca="Seguiment" data-en="Follow-up">Seguimiento</span></div>
+        <div class="etiquetes">
+          <span class="etiqueta">PDF</span>
+          <span class="etiqueta" data-ca="Seguiment" data-en="Follow-up">Seguimiento</span>
+        </div>
       </div>
-      <div class="targeta apareix">
+
+      <div class="targeta-servei">
+        <div class="icona-servei" style="background:#0284C7">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        </div>
         <h3 data-ca="Recuperació de clients" data-en="Winning customers back">Recuperación de clientes</h3>
         <p data-ca="Detectem qui fa mesos que no torna i li escrivim amb un motiu concret. Sempre amb consentiment i amb baixa en un clic." data-en="We spot who hasn't come back in months and write to them with a concrete reason. Always with consent and one-click opt-out.">Detectamos quién lleva meses sin volver y le escribimos con un motivo concreto. Siempre con consentimiento y con baja en un clic.</p>
-        <div class="etiquetes"><span class="etiqueta" data-ca="Segmentació" data-en="Segmentation">Segmentación</span><span class="etiqueta">RGPD</span></div>
+        <div class="etiquetes">
+          <span class="etiqueta" data-ca="Segmentació" data-en="Segmentation">Segmentación</span>
+          <span class="etiqueta">RGPD</span>
+        </div>
       </div>
-      <div class="targeta apareix">
+
+      <div class="targeta-servei">
+        <div class="icona-servei" style="background:#65A30D">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
         <h3 data-ca="Fitxa de client i informes" data-en="Customer records and reports">Ficha de cliente e informes</h3>
         <p data-ca="Tot en un lloc: converses, visites, historial. I un resum al teu WhatsApp cada dilluns amb el que ha passat." data-en="Everything in one place: conversations, visits, history. Plus a summary on your WhatsApp every Monday.">Todo en un sitio: conversaciones, visitas, historial. Y un resumen en tu WhatsApp cada lunes con lo que ha pasado.</p>
-        <div class="etiquetes"><span class="etiqueta">CRM</span><span class="etiqueta" data-ca="Informe setmanal" data-en="Weekly report">Informe semanal</span></div>
+        <div class="etiquetes">
+          <span class="etiqueta">CRM</span>
+          <span class="etiqueta" data-ca="Informe setmanal" data-en="Weekly report">Informe semanal</span>
+        </div>
       </div>
+
+      <div class="targeta-servei">
+        <div class="icona-servei" style="background:#DC2626">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+        </div>
+        <h3 data-ca="Automatització de facturació" data-en="Invoicing automation">Automatización de facturación</h3>
+        <p data-ca="Factures que es generen, s'envien i s'arxiven soles. Adéu a perdre tardes amb paperassa i tasques administratives." data-en="Invoices that are generated, sent and filed on their own. No more losing afternoons to paperwork and admin tasks.">Facturas que se generan, se envían y se archivan solas. Adiós a perder tardes con papeleo y tareas administrativas.</p>
+        <div class="etiquetes">
+          <span class="etiqueta" data-ca="Generació de factures" data-en="Invoice generation">Generación de facturas</span>
+          <span class="etiqueta" data-ca="Enviament automàtic" data-en="Automatic sending">Envío automático</span>
+          <span class="etiqueta" data-ca="Recordatoris de pagament" data-en="Payment reminders">Recordatorios de pago</span>
+        </div>
+      </div>
+
+      <div class="targeta-servei">
+        <div class="icona-servei" style="background:#4F46E5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+        </div>
+        <h3 data-ca="Automatitzacions a mida" data-en="Custom automations">Automatizaciones a medida</h3>
+        <p data-ca="Tens una tasca repetitiva concreta? L'estudiem i l'automatitzem: si es fa sempre igual, es pot automatitzar." data-en="Have a specific repetitive task? We study it and automate it: if it's always done the same way, it can be automated.">¿Tienes una tarea repetitiva concreta? La estudiamos y la automatizamos: si se hace siempre igual, se puede automatizar.</p>
+        <div class="etiquetes">
+          <span class="etiqueta" data-ca="Integracions" data-en="Integrations">Integraciones</span>
+          <span class="etiqueta" data-ca="Flux a mida" data-en="Custom workflow">Flujo a medida</span>
+          <span class="etiqueta" data-ca="IA aplicada" data-en="Applied AI">IA aplicada</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -571,19 +671,17 @@ footer a:hover{color:var(--menta)}
     <div class="intro apareix">
       <div class="hora">07:30 — <span data-ca="obres la persiana" data-en="you open up">abres la persiana</span></div>
       <h2 data-ca="Tres punts de partida" data-en="Three starting points">Tres puntos de partida</h2>
-      <p class="apagat" data-ca="Preus orientatius de sortida. La proposta final s'ajusta al teu negoci, i te la donem tancada abans de començar." data-en="Indicative starting prices. The final proposal is tailored to your business, and we give it to you closed before we start.">Precios orientativos de partida. La propuesta final se ajusta a tu negocio, y te la damos cerrada antes de empezar.</p>
+      <p class="apagat" data-ca="Cada negoci és diferent, i el pressupost també. T'expliquem què inclou cada nivell i et donem una proposta tancada abans de començar, sense sorpreses." data-en="Every business is different, and so is the budget. We explain what each level includes and give you a closed proposal before we start, no surprises.">Cada negocio es diferente, y el presupuesto también. Te explicamos qué incluye cada nivel y te damos una propuesta cerrada antes de empezar, sin sorpresas.</p>
     </div>
     <div class="plans">
       <div class="pla apareix">
         <span class="nom" data-ca="Bàsic" data-en="Starter">Básico</span>
         <h3 data-ca="Que no quedi cap missatge sense resposta" data-en="So no message goes unanswered">Que no quede ningún mensaje sin respuesta</h3>
-        <p class="preu" data-ca="Des de 590 € de muntatge + 90 €/mes" data-en="From €590 setup + €90/month">Desde 590 € de montaje + 90 €/mes</p>
         <ul>
           <li data-ca="WhatsApp oficial donat d'alta al teu nom" data-en="Official WhatsApp registered in your name">WhatsApp oficial dado de alta a tu nombre</li>
           <li data-ca="Respostes a les 30 preguntes de sempre" data-en="Answers to the 30 usual questions">Respuestas a las 30 preguntas de siempre</li>
           <li data-ca="Recollida de dades del client" data-en="Customer detail capture">Recogida de datos del cliente</li>
           <li data-ca="Traspàs a persona quan cal" data-en="Handover to a human when needed">Traspaso a persona cuando hace falta</li>
-          <li data-ca="1.000 missatges/mes inclosos" data-en="1,000 messages/month included">1.000 mensajes/mes incluidos</li>
         </ul>
         <a class="btn btn-2" href="#contacto" data-ca="Demanar proposta" data-en="Request a proposal">Pedir propuesta</a>
       </div>
@@ -591,21 +689,18 @@ footer a:hover{color:var(--menta)}
         <span class="insignia" data-ca="EL MÉS TRIAT" data-en="MOST CHOSEN">EL MÁS ELEGIDO</span>
         <span class="nom" data-ca="Professional" data-en="Professional">Profesional</span>
         <h3 data-ca="Que l'agenda s'ompli sola" data-en="So your calendar fills itself">Que la agenda se llene sola</h3>
-        <p class="preu" data-ca="Des de 1.200 € de muntatge + 190 €/mes" data-en="From €1,200 setup + €190/month">Desde 1.200 € de montaje + 190 €/mes</p>
         <ul>
           <li data-ca="Tot el del pla Bàsic" data-en="Everything in Starter">Todo lo del plan Básico</li>
           <li data-ca="Qualificació i cites automàtiques" data-en="Automatic qualification and booking">Cualificación y citas automáticas</li>
           <li data-ca="Recordatoris i confirmacions" data-en="Reminders and confirmations">Recordatorios y confirmaciones</li>
           <li data-ca="Fitxa de client i historial" data-en="Customer records and history">Ficha de cliente e historial</li>
           <li data-ca="Avisos a l'equip" data-en="Alerts to your team">Avisos al equipo</li>
-          <li data-ca="4.000 missatges/mes inclosos" data-en="4,000 messages/month included">4.000 mensajes/mes incluidos</li>
         </ul>
         <a class="btn btn-1" href="#contacto" data-ca="Demanar proposta" data-en="Request a proposal">Pedir propuesta</a>
       </div>
       <div class="pla apareix">
         <span class="nom">Premium</span>
         <h3 data-ca="Que el negoci funcioni sense tu" data-en="So the business runs without you">Que el negocio funcione sin ti</h3>
-        <p class="preu" data-ca="A mida, des de 2.500 €" data-en="Custom, from €2,500">A medida, desde 2.500 €</p>
         <ul>
           <li data-ca="Tot el del pla Professional" data-en="Everything in Professional">Todo lo del plan Profesional</li>
           <li data-ca="Campanyes de recuperació de clients" data-en="Win-back campaigns">Campañas de recuperación de clientes</li>
@@ -617,7 +712,7 @@ footer a:hover{color:var(--menta)}
         <a class="btn btn-2" href="#contacto" data-ca="Demanar proposta" data-en="Request a proposal">Pedir propuesta</a>
       </div>
     </div>
-    <p class="apagat apareix" style="margin-top:1.6rem;font-size:.9rem" data-ca="Els missatges que Meta factura a part es repercuteixen a preu de cost, amb el detall a la factura. Sense sorpreses." data-en="Messages billed separately by Meta are passed through at cost, itemised on your invoice. No surprises.">Los mensajes que Meta factura aparte se repercuten a precio de coste, con el detalle en la factura. Sin sorpresas.</p>
+    <p class="apagat apareix" style="margin-top:1.6rem;font-size:.9rem" data-ca="El pressupost final depèn del volum de missatges i de les integracions que necessitis. T'ho detallem tot abans de començar." data-en="The final budget depends on message volume and the integrations you need. We detail everything before we start.">El presupuesto final depende del volumen de mensajes y de las integraciones que necesites. Te lo detallamos todo antes de empezar.</p>
   </div>
 </section>
 
@@ -877,6 +972,17 @@ function canviaIdioma(l){
   });
   document.querySelectorAll('.idioma button').forEach(b => b.classList.toggle('on', b.dataset.lang === l));
   try{ localStorage.setItem('idioma', l); }catch(e){}
+  const video = document.getElementById('videoSereno');
+  if(video){
+    const nouSrc = video.dataset['src' + l.charAt(0).toUpperCase() + l.slice(1)] || video.dataset.srcEs;
+    const srcActual = video.querySelector('source').getAttribute('src');
+    if(nouSrc && nouSrc !== srcActual){
+      const estavaReproduint = !video.paused;
+      video.querySelector('source').setAttribute('src', nouSrc);
+      video.load();
+      if(estavaReproduint) video.play().catch(()=>{});
+    }
+  }
   pintaXat();
 }
 
