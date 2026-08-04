@@ -17,7 +17,7 @@
 
 <title>SERENO — Automatización con IA y WhatsApp para pymes</title>
 <meta name="description" content="Automatizamos la atención al cliente, las reservas y los recordatorios de tu negocio por WhatsApp. Responde 24/7 sin que tú muevas un dedo. Barcelona, España y Colombia.">
-<meta name="keywords" content="chatbot WhatsApp empresas, automatización pymes, reservas automáticas WhatsApp, IA para negocios, automatización Barcelona, WhatsApp Business API España">
+<meta name="keywords" content="chatbot WhatsApp empresas, automatización pymes, reservas automáticas WhatsApp, IA para negocios, automatización Barcelona, automatización agencias de viaje, WhatsApp verificado España">
 <link rel="canonical" href="https://serenoautomatiza.com/">
 <link rel="alternate" hreflang="es" href="https://serenoautomatiza.com/">
 <link rel="alternate" hreflang="ca" href="https://serenoautomatiza.com/?lang=ca">
@@ -222,8 +222,16 @@ header.clar .idioma{border-color:rgba(18,20,43,.18);color:var(--tinta)}
 .targeta p{font-size:.94rem;color:var(--crema-suau)}
 .dia .targeta{background:rgba(18,20,43,.035);border-color:rgba(18,20,43,.11)}
 .dia .targeta p{color:var(--tinta-suau)}
+.targeta-destacada{border-color:var(--menta);background:rgba(111,227,180,.06)}
+.targeta-destacada:hover{border-color:var(--menta)}
+.dia .targeta-destacada{border-color:#0F7F55;background:rgba(15,127,85,.05)}
 
 .marca-hora{font-family:var(--mono);font-size:.72rem;font-weight:700;color:var(--ambre);letter-spacing:.1em;display:block;margin-bottom:.7rem}
+
+/* ── Vídeo ───────────────────────────────────────────────────── */
+.video-marc{max-width:760px;margin:2.2rem auto 0;border-radius:20px;overflow:hidden;border:1px solid var(--vora);box-shadow:0 30px 60px -32px rgba(0,0,0,.5)}
+.dia .video-marc{border-color:rgba(18,20,43,.12);box-shadow:0 30px 60px -32px rgba(18,20,43,.25)}
+.video-marc video{display:block;width:100%;height:auto;background:#000}
 
 .etiquetes{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
 .etiqueta{font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;padding:.28rem .6rem;border:1px solid var(--vora);border-radius:99px;color:var(--crema-suau)}
@@ -243,6 +251,10 @@ header.clar .idioma{border-color:rgba(18,20,43,.18);color:var(--tinta)}
 .sector{padding:.6rem 1.05rem;border:1px solid var(--vora);border-radius:99px;font-size:.92rem;font-weight:500;transition:.2s}
 .sector:hover{border-color:var(--menta);color:var(--menta)}
 .dia .sector{border-color:rgba(18,20,43,.16)}
+.sector-destacat{border-color:var(--menta);background:rgba(111,227,180,.1);color:var(--menta);font-weight:700}
+.sector-destacat:hover{background:rgba(111,227,180,.18)}
+.dia .sector-destacat{border-color:#0F7F55;background:rgba(15,127,85,.08);color:#0F7F55}
+.dia .sector-destacat:hover{background:rgba(15,127,85,.14)}
 
 /* ── Plans ───────────────────────────────────────────────────── */
 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;align-items:start}
@@ -386,6 +398,23 @@ footer a:hover{color:var(--menta)}
   </div>
 </section>
 
+<!-- ══════════ VÍDEO ══════════ -->
+<section id="video">
+  <div class="env">
+    <div class="intro apareix" style="text-align:center;max-width:640px;margin-left:auto;margin-right:auto">
+      <div class="hora" style="justify-content:center">01:30 — <span data-ca="60 segons per entendre-ho" data-en="60 seconds to see it">60 segundos para entenderlo</span></div>
+      <h2 data-ca="Veu com funciona SERENO" data-en="See how SERENO works">Ve cómo funciona SERENO</h2>
+      <p class="apagat" data-ca="Un resum ràpid de què fem i com queda muntat el sistema." data-en="A quick overview of what we do and how the system is set up.">Un resumen rápido de qué hacemos y cómo queda montado el sistema.</p>
+    </div>
+    <div class="video-marc apareix">
+      <video controls preload="metadata" playsinline poster="">
+        <source src="sereno-video.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de vídeo. Puedes escribirnos por WhatsApp para pedir el enlace.
+      </video>
+    </div>
+  </div>
+</section>
+
 <!-- ══════════ PROBLEMA ══════════ -->
 <section id="problema">
   <div class="env">
@@ -438,6 +467,11 @@ footer a:hover{color:var(--menta)}
       <p class="apagat" data-ca="Cada mòdul funciona sol. Comences per un i n'afegeixes quan en vegis el resultat, no abans." data-en="Each module works on its own. You start with one and add more when you see results, not before.">Cada módulo funciona solo. Empiezas por uno y añades cuando veas el resultado, no antes.</p>
     </div>
     <div class="graella g2">
+      <div class="targeta apareix targeta-destacada">
+        <h3 data-ca="Base de dades des de les teves converses de WhatsApp" data-en="Customer database from your WhatsApp conversations">Base de datos desde tus conversaciones de WhatsApp</h3>
+        <p data-ca="Tota la informació que avui està dispersa entre xats i línies de WhatsApp es converteix en una única base de dades estructurada: noms, telèfons, interessos, historial. És el punt de partida per a qualsevol acció de comunicació, i un actiu que es queda amb el teu negoci per sempre, encara que canviï qui atengui el WhatsApp." data-en="Everything that's scattered across chats and WhatsApp lines today becomes a single structured database: names, phone numbers, interests, history. It's the starting point for any communication and an asset that stays with your business forever, even if whoever handles WhatsApp changes." >Toda la información que hoy está dispersa entre chats y líneas de WhatsApp se convierte en una única base de datos estructurada: nombres, teléfonos, intereses, historial. Es el punto de partida para cualquier acción de comunicación, y un activo que se queda con tu negocio para siempre, aunque cambie quién atienda el WhatsApp.</p>
+        <div class="etiquetes"><span class="etiqueta" data-ca="Múltiples línies" data-en="Multiple lines">Múltiples líneas</span><span class="etiqueta" data-ca="Historial complet" data-en="Full history">Historial completo</span><span class="etiqueta">RGPD / Ley 1581</span></div>
+      </div>
       <div class="targeta apareix">
         <h3 data-ca="Atenció automàtica per WhatsApp" data-en="Automatic WhatsApp support">Atención automática por WhatsApp</h3>
         <p data-ca="Un assistent que respon amb la informació real del teu negoci: preus, horaris, serveis, zona. Si no ho sap, ho diu i t'avisa." data-en="An assistant that answers using your real business information: prices, hours, services, service area. If it doesn't know, it says so and alerts you.">Un asistente que responde con la información real de tu negocio: precios, horarios, servicios, zona. Si no lo sabe, lo dice y te avisa.</p>
@@ -481,6 +515,7 @@ footer a:hover{color:var(--menta)}
       <p class="apagat" data-ca="No venem el mateix a tothom. Estudiem el teu negoci i automatitzem el que et roba temps de veritat." data-en="We don't sell the same thing to everyone. We study your business and automate what actually eats your time.">No vendemos lo mismo a todos. Estudiamos tu negocio y automatizamos lo que te roba tiempo de verdad.</p>
     </div>
     <div class="sectors apareix">
+      <div class="sector sector-destacat" data-ca="Agències de viatges i turisme" data-en="Travel agencies and tourism">Agencias de viaje y turismo</div>
       <div class="sector" data-ca="Reformes i instal·ladors" data-en="Renovations and trades">Reformas e instaladores</div>
       <div class="sector" data-ca="Perruqueria i estètica" data-en="Hair and beauty">Peluquería y estética</div>
       <div class="sector" data-ca="Clínica i fisioteràpia" data-en="Clinics and physio">Clínica y fisioterapia</div>
@@ -600,7 +635,7 @@ footer a:hover{color:var(--menta)}
       </details>
       <details>
         <summary data-ca="Puc perdre el meu número de WhatsApp?" data-en="Could I lose my WhatsApp number?">¿Puedo perder mi número de WhatsApp?</summary>
-        <p data-ca="Treballem només amb l'API oficial de WhatsApp Business de Meta, mai amb connexions pirata que fan tancar comptes. El compte es dona d'alta a nom de la teva empresa: és teva, encara que un dia deixis de treballar amb nosaltres." data-en="We work only with Meta's official WhatsApp Business API, never with unofficial connections that get accounts banned. The account is registered to your company: it's yours, even if one day you stop working with us.">Trabajamos solo con la API oficial de WhatsApp Business de Meta, nunca con conexiones piratas que hacen cerrar cuentas. La cuenta se da de alta a nombre de tu empresa: es tuya, aunque un día dejes de trabajar con nosotros.</p>
+        <p data-ca="Treballem només amb aplicacions i connexions oficials i verificades, mai amb connexions pirata que fan tancar comptes. El compte es dona d'alta a nom de la teva empresa: és teva, encara que un dia deixis de treballar amb nosaltres." data-en="We work only with official, verified applications and connections, never with unofficial connections that get accounts banned. The account is registered to your company: it's yours, even if one day you stop working with us.">Trabajamos solo con aplicaciones y conexiones oficiales y verificadas, nunca con conexiones piratas que hacen cerrar cuentas. La cuenta se da de alta a nombre de tu empresa: es tuya, aunque un día dejes de trabajar con nosotros.</p>
       </details>
       <details>
         <summary data-ca="Puc fer servir el número que ja tinc?" data-en="Can I use my existing number?">¿Puedo usar el número que ya tengo?</summary>
@@ -624,7 +659,7 @@ footer a:hover{color:var(--menta)}
       </details>
       <details>
         <summary data-ca="Quant es triga a tenir-ho funcionant?" data-en="How long until it's running?">¿Cuánto se tarda en tenerlo funcionando?</summary>
-        <p data-ca="Entre una i dues setmanes per als sistemes bàsics. La part que més triga no som nosaltres: és la verificació de l'empresa a Meta, que pot anar de dos dies a dues setmanes." data-en="One to two weeks for basic systems. The slowest part isn't us: it's Meta's business verification, which can take anywhere from two days to two weeks.">Entre una y dos semanas para los sistemas básicos. La parte que más tarda no somos nosotros: es la verificación de la empresa en Meta, que puede ir de dos días a dos semanas.</p>
+        <p data-ca="Entre una i dues setmanes per als sistemes bàsics. La part que més triga no som nosaltres: és la verificació oficial del compte, que pot anar de dos dies a dues setmanes." data-en="One to two weeks for basic systems. The slowest part isn't us: it's the official account verification, which can take anywhere from two days to two weeks.">Entre una y dos semanas para los sistemas básicos. La parte que más tarda no somos nosotros: es la verificación oficial de la cuenta, que puede ir de dos días a dos semanas.</p>
       </details>
       <details>
         <summary data-ca="I si un mes no em serveix?" data-en="What if it's not working for me?">¿Y si un mes no me sirve?</summary>
@@ -736,7 +771,6 @@ footer a:hover{color:var(--menta)}
         <ul>
           <li><a href="https://wa.me/34636596788" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="mailto:info@serenoautomatiza.com">info@serenoautomatiza.com</a></li>
-          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
       </div>
     </div>
