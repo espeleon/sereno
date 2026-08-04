@@ -269,7 +269,7 @@ header.clar .idioma{border-color:rgba(18,20,43,.18);color:var(--tinta)}
 
 /* ── Sectors ─────────────────────────────────────────────────── */
 .sectors{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
-.sector{padding:.6rem 1.05rem;border:1px solid var(--vora);border-radius:99px;font-size:.92rem;font-weight:500;transition:.2s}
+.sector{padding:.6rem 1.05rem;border:1px solid var(--vora);border-radius:99px;font-size:.92rem;font-weight:500;transition:.2s;text-decoration:none;color:inherit;cursor:pointer;display:inline-block}
 .sector:hover{border-color:var(--menta);color:var(--menta)}
 .dia .sector{border-color:rgba(18,20,43,.16)}
 .sector-destacat{border-color:var(--menta);background:rgba(111,227,180,.1);color:var(--menta);font-weight:700}
@@ -616,19 +616,71 @@ footer a:hover{color:var(--menta)}
       <p class="apagat" data-ca="No venem el mateix a tothom. Estudiem el teu negoci i automatitzem el que et roba temps de veritat." data-en="We don't sell the same thing to everyone. We study your business and automate what actually eats your time.">No vendemos lo mismo a todos. Estudiamos tu negocio y automatizamos lo que te roba tiempo de verdad.</p>
     </div>
     <div class="sectors apareix">
-      <div class="sector sector-destacat" data-ca="Agències de viatges i turisme" data-en="Travel agencies and tourism">Agencias de viaje y turismo</div>
-      <div class="sector" data-ca="Reformes i instal·ladors" data-en="Renovations and trades">Reformas e instaladores</div>
-      <div class="sector" data-ca="Perruqueria i estètica" data-en="Hair and beauty">Peluquería y estética</div>
-      <div class="sector" data-ca="Clínica i fisioteràpia" data-en="Clinics and physio">Clínica y fisioterapia</div>
-      <div class="sector" data-ca="Taller mecànic" data-en="Auto repair">Taller mecánico</div>
-      <div class="sector" data-ca="Restauració" data-en="Restaurants">Restauración</div>
-      <div class="sector" data-ca="Immobiliària" data-en="Real estate">Inmobiliaria</div>
-      <div class="sector" data-ca="Assessoria i despatx" data-en="Accountants and law firms">Asesoría y despacho</div>
-      <div class="sector" data-ca="Gimnàs i centre esportiu" data-en="Gyms and studios">Gimnasio y centro deportivo</div>
-      <div class="sector" data-ca="Botiga i comerç" data-en="Retail">Tienda y comercio</div>
-      <div class="sector" data-ca="Veterinari" data-en="Veterinary">Veterinario</div>
-      <div class="sector" data-ca="Acadèmia i formació" data-en="Training and academies">Academia y formación</div>
-      <div class="sector">···</div>
+      <a class="sector sector-destacat" target="_blank" rel="noopener"
+        data-ca="Agències de viatges i turisme" data-en="Travel agencies and tourism"
+        data-msg-es="Hola, tengo una agencia de viajes y quiero información sobre SERENO"
+        data-msg-ca="Hola, tinc una agència de viatges i vull informació sobre SERENO"
+        data-msg-en="Hi, I run a travel agency and would like information about SERENO">Agencias de viaje y turismo</a>
+      <a class="sector" target="_blank" rel="noopener"
+        data-ca="Reformes i instal·ladors" data-en="Renovations and trades"
+        data-msg-es="Hola, tengo un negocio de reformas/instalaciones y quiero información sobre SERENO"
+        data-msg-ca="Hola, tinc un negoci de reformes/instal·lacions i vull informació sobre SERENO"
+        data-msg-en="Hi, I run a renovations/trades business and would like information about SERENO">Reformas e instaladores</a>
+      <a class="sector" target="_blank" rel="noopener"
+        data-ca="Perruqueria i estètica" data-en="Hair and beauty"
+        data-msg-es="Hola, tengo una peluquería/centro de estética y quiero información sobre SERENO"
+        data-msg-ca="Hola, tinc una perruqueria/centre d'estètica i vull informació sobre SERENO"
+        data-msg-en="Hi, I run a hair/beauty salon and would like information about SERENO">Peluquería y estética</a>
+      <a class="sector" target="_blank" rel="noopener"
+        data-ca="Clínica i fisioteràpia" data-en="Clinics and physio"
+        data-msg-es="Hola, tengo una clínica/centro de fisioterapia y quiero información sobre SERENO"
+        data-msg-ca="Hola, tinc una clínica/centre de fisioteràpia i vull informació sobre SERENO"
+        data-msg-en="Hi, I run a clinic/physio practice and would like information about SERENO">Clínica y fisioterapia</a>
+      <a class="sector" target="_blank" rel="noopener"
+        data-ca="Taller mecànic" data-en="Auto repair"
+        data-msg-es="Hola, tengo un taller mecánico y quiero información sobre SERENO"
+        data-msg-ca="Hola, tinc un taller mecànic i vull informació sobre SERENO"
+        data-msg-en="Hi, I run an auto repair shop and would like information about SERENO">Taller mecánico</a>
+      <a class="sector" target="_blank" rel="noopener"
+        data-ca="Restauració" data-en="Restaurants"
+        data-msg-es="Hola, tengo un restaurante y quiero información sobre SERENO"
+        data-msg-ca="Hola, tinc un restaurant i vull informació sobre SERENO"
+        data-msg-en="Hi, I run a restaurant and would like information about SERENO">Restauración</a>
+      <a class="sector" target="_blank" rel="noopener"
+        data-ca="Immobiliària" data-en="Real estate"
+        data-msg-es="Hola, tengo una inmobiliaria y quiero información sobre SERENO"
+        data-msg-ca="Hola, tinc una immobiliària i vull informació sobre SERENO"
+        data-msg-en="Hi, I run a real estate agency and would like information about SERENO">Inmobiliaria</a>
+      <a class="sector" target="_blank" rel="noopener"
+        data-ca="Assessoria i despatx" data-en="Accountants and law firms"
+        data-msg-es="Hola, tengo una asesoría/despacho y quiero información sobre SERENO"
+        data-msg-ca="Hola, tinc una assessoria/despatx i vull informació sobre SERENO"
+        data-msg-en="Hi, I run an accounting/law firm and would like information about SERENO">Asesoría y despacho</a>
+      <a class="sector" target="_blank" rel="noopener"
+        data-ca="Gimnàs i centre esportiu" data-en="Gyms and studios"
+        data-msg-es="Hola, tengo un gimnasio/centro deportivo y quiero información sobre SERENO"
+        data-msg-ca="Hola, tinc un gimnàs/centre esportiu i vull informació sobre SERENO"
+        data-msg-en="Hi, I run a gym/sports studio and would like information about SERENO">Gimnasio y centro deportivo</a>
+      <a class="sector" target="_blank" rel="noopener"
+        data-ca="Botiga i comerç" data-en="Retail"
+        data-msg-es="Hola, tengo una tienda/comercio y quiero información sobre SERENO"
+        data-msg-ca="Hola, tinc una botiga/comerç i vull informació sobre SERENO"
+        data-msg-en="Hi, I run a retail shop and would like information about SERENO">Tienda y comercio</a>
+      <a class="sector" target="_blank" rel="noopener"
+        data-ca="Veterinari" data-en="Veterinary"
+        data-msg-es="Hola, tengo una clínica veterinaria y quiero información sobre SERENO"
+        data-msg-ca="Hola, tinc una clínica veterinària i vull informació sobre SERENO"
+        data-msg-en="Hi, I run a veterinary clinic and would like information about SERENO">Veterinario</a>
+      <a class="sector" target="_blank" rel="noopener"
+        data-ca="Acadèmia i formació" data-en="Training and academies"
+        data-msg-es="Hola, tengo una academia/centro de formación y quiero información sobre SERENO"
+        data-msg-ca="Hola, tinc una acadèmia/centre de formació i vull informació sobre SERENO"
+        data-msg-en="Hi, I run a training academy and would like information about SERENO">Academia y formación</a>
+      <a class="sector" target="_blank" rel="noopener"
+        data-ca="El teu sector? Escriu-nos" data-en="Your sector? Message us"
+        data-msg-es="Hola, tengo un negocio y quiero información sobre SERENO"
+        data-msg-ca="Hola, tinc un negoci i vull informació sobre SERENO"
+        data-msg-en="Hi, I run a business and would like information about SERENO">¿Tu sector? Escríbenos</a>
     </div>
   </div>
 </section>
@@ -768,6 +820,7 @@ footer a:hover{color:var(--menta)}
         <label for="sector" data-ca="Sector" data-en="Sector">Sector</label>
         <select id="sector" name="sector" required>
           <option value="" data-ca="Tria…" data-en="Choose…">Elige…</option>
+          <option data-ca="Agències de viatges / Turisme" data-en="Travel agencies / Tourism">Agencias de viaje / Turismo</option>
           <option data-ca="Reformes / Instal·lacions" data-en="Renovations / Trades">Reformas / Instalaciones</option>
           <option data-ca="Perruqueria / Estètica" data-en="Hair / Beauty">Peluquería / Estética</option>
           <option data-ca="Clínica / Salut" data-en="Clinic / Health">Clínica / Salud</option>
@@ -934,6 +987,10 @@ function canviaIdioma(l){
   });
   document.querySelectorAll('a.wa').forEach(a => {
     a.href = a.href.split('?')[0] + '?text=' + encodeURIComponent(msgWa[l] || msgWa.es);
+  });
+  document.querySelectorAll('a.sector').forEach(a => {
+    const msg = a.dataset['msg' + l.charAt(0).toUpperCase() + l.slice(1)] || a.dataset.msgEs;
+    a.href = 'https://wa.me/34636596788?text=' + encodeURIComponent(msg || msgWa.es);
   });
   document.querySelectorAll('.idioma button').forEach(b => b.classList.toggle('on', b.dataset.lang === l));
   try{ localStorage.setItem('idioma', l); }catch(e){}
