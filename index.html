@@ -15,6 +15,13 @@
      El text que hi ha escrit a l'HTML és el castellà (idioma base).
      ═══════════════════════════════════════════════════════════════ -->
 
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+
 <title>SERENO — Automatización con IA y WhatsApp para pymes</title>
 <meta name="description" content="Automatizamos la atención al cliente, las reservas y los recordatorios de tu negocio por WhatsApp. Responde 24/7 sin que tú muevas un dedo. Barcelona, España y Colombia.">
 <meta name="keywords" content="chatbot WhatsApp empresas, automatización pymes, reservas automáticas WhatsApp, IA para negocios, automatización Barcelona, automatización agencias de viaje, WhatsApp verificado España">
@@ -147,8 +154,11 @@ header.clar{background:rgba(250,246,236,.78);border-bottom-color:rgba(18,20,43,.
 header.clar .marca,header.clar nav a{color:var(--tinta)}
 .barra{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0}
 .marca{font-family:var(--display);font-weight:800;font-size:1.28rem;letter-spacing:-.03em;color:var(--crema);text-decoration:none;display:flex;align-items:center;gap:.55rem}
-.punt{width:9px;height:9px;border-radius:50%;background:var(--menta);box-shadow:0 0 0 0 rgba(111,227,180,.65);animation:bat 2.6s infinite}
-@keyframes bat{0%{box-shadow:0 0 0 0 rgba(111,227,180,.55)}70%{box-shadow:0 0 0 11px rgba(111,227,180,0)}100%{box-shadow:0 0 0 0 rgba(111,227,180,0)}}
+.logo{height:32px;width:auto;display:block}
+.logo-fosc{display:none}
+header.clar .logo-claro{display:none}
+header.clar .logo-fosc{display:block}
+footer .logo{height:38px}
 nav{display:flex;align-items:center;gap:1.5rem}
 nav a{color:var(--crema-suau);text-decoration:none;font-size:.92rem;font-weight:500;transition:color .2s}
 nav a:hover{color:var(--menta)}
@@ -394,7 +404,10 @@ footer a:hover{color:var(--menta)}
 <!-- ══════════ CAPÇALERA ══════════ -->
 <header id="capcalera">
   <div class="env barra">
-    <a href="#inici" class="marca"><span class="punt"></span>SERENO</a>
+    <a href="#inici" class="marca">
+      <img src="logo-sereno-claro.png" alt="SERENO" class="logo logo-claro">
+      <img src="logo-sereno-oscuro.png" alt="SERENO" class="logo logo-fosc">
+    </a>
     <nav>
       <div class="nav-links">
         <a href="#servicios" data-ca="Serveis" data-en="Services">Servicios</a>
@@ -886,7 +899,9 @@ footer a:hover{color:var(--menta)}
   <div class="env">
     <div class="peu-graella">
       <div>
-        <a href="#inici" class="marca" style="margin-bottom:1rem"><span class="punt"></span>SERENO</a>
+        <a href="#inici" class="marca" style="margin-bottom:1rem">
+          <img src="logo-sereno-claro.png" alt="SERENO" class="logo">
+        </a>
         <p class="apagat" style="font-size:.92rem;max-width:34ch" data-ca="Automatització amb IA i WhatsApp perquè els negocis petits deixin de perdre clients de matinada." data-en="AI and WhatsApp automation so small businesses stop losing customers in the middle of the night.">Automatización con IA y WhatsApp para que los negocios pequeños dejen de perder clientes de madrugada.</p>
       </div>
       <div>
