@@ -267,6 +267,25 @@ header.clar .idioma{border-color:rgba(18,20,43,.18);color:var(--tinta)}
 .dia .pas p{color:var(--tinta-suau)}
 .dia .pas .quan{color:#0F7F55}
 
+/* ── Secció "com funciona": el text s'enfosqueix junt amb el fons durant la transició ── */
+#como{
+  color: var(--crema); /* fallback per navegadors sense color-mix() */
+  color: color-mix(in srgb, var(--tinta) calc(var(--alba) * 100%), var(--crema));
+}
+#como .apagat,
+#como .pas p{
+  color: var(--crema-suau);
+  color: color-mix(in srgb, var(--tinta-suau) calc(var(--alba) * 100%), var(--crema-suau));
+}
+#como .pas{
+  border-top-color: var(--vora);
+  border-top-color: color-mix(in srgb, rgba(18,20,43,.16) calc(var(--alba) * 100%), var(--vora));
+}
+#como .pas .quan{
+  color: var(--menta);
+  color: color-mix(in srgb, #0F7F55 calc(var(--alba) * 100%), var(--menta));
+}
+
 /* ── Sectors ─────────────────────────────────────────────────── */
 .sectors{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
 .sector{padding:.6rem 1.05rem;border:1px solid var(--vora);border-radius:99px;font-size:.92rem;font-weight:500;transition:.2s;text-decoration:none;color:inherit;cursor:pointer;display:inline-block}
@@ -1022,11 +1041,11 @@ canviaIdioma(inicial);
 
 /* ══════════ 5. L'alba: el fons s'aclareix amb l'scroll ══════════ */
 const capcalera = document.getElementById('capcalera');
-const zonaDia = document.getElementById('planes');
+const zonaDia = document.getElementById('como');
 
 function pintaAlba(){
   const inici = window.innerHeight * 1.9;
-  const final = zonaDia.offsetTop - window.innerHeight * 0.25;
+  const final = zonaDia.offsetTop - window.innerHeight * 0.35;
   const p = Math.min(1, Math.max(0, (scrollY - inici) / (final - inici)));
   document.documentElement.style.setProperty('--alba', p.toFixed(3));
   capcalera.classList.toggle('clar', p > 0.62);
