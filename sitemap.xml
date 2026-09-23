@@ -10,6 +10,27 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://serenoautomatiza.com/automatizar-presupuestos-whatsapp</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://serenoautomatiza.com/automatizar-presupuestos-whatsapp"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://serenoautomatiza.com/automatizar-presupuestos-whatsapp?lang=ca"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serenoautomatiza.com/recordatorios-de-citas-automaticos</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://serenoautomatiza.com/recordatorios-de-citas-automaticos"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://serenoautomatiza.com/recordatorios-de-citas-automaticos?lang=ca"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://serenoautomatiza.com/responder-whatsapp-fuera-de-horario</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://serenoautomatiza.com/responder-whatsapp-fuera-de-horario"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://serenoautomatiza.com/responder-whatsapp-fuera-de-horario?lang=ca"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://serenoautomatiza.com/aviso-legal</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
