@@ -88,7 +88,9 @@ details p{margin-top:.7rem;color:var(--tinta-suau);font-size:.96rem;max-width:64
 .relacionadas a:hover{border-color:var(--menta);color:var(--menta)}
 
 footer{background:var(--nit);color:var(--crema);padding:3rem 0 2rem}
-.peu-graella{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.peu-graella{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.peu-lema{margin-top:.9rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--menta-viu)}
+.peu-contacte{margin-top:1.1rem}
 footer h4{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--menta-viu);margin-bottom:.85rem;font-weight:700}
 footer ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
 footer a{color:rgba(242,239,230,.78);text-decoration:none;font-size:.9rem}
@@ -96,6 +98,7 @@ footer a:hover{color:var(--menta-viu)}
 .peu-final{border-top:1px solid rgba(255,255,255,.1);padding-top:1.4rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;font-size:.82rem;color:rgba(242,239,230,.6)}
 .peu-final nav{gap:1.2rem}
 footer .logo{height:34px}
+footer .apagat{color:rgba(242,239,230,.66)}
 
 .flotant{position:fixed;right:1.1rem;bottom:1.1rem;z-index:60;display:flex;align-items:center;gap:.6rem;background:var(--menta);color:#fff;padding:.8rem 1.2rem;border-radius:99px;text-decoration:none;font-weight:600;font-size:.92rem;box-shadow:0 14px 34px -10px rgba(0,0,0,.35);transition:transform .2s}
 .flotant:hover{transform:scale(1.04)}
