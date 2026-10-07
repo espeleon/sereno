@@ -718,6 +718,24 @@ a.etiqueta:hover{border-color:var(--menta);color:var(--menta)}
   </div>
 </section>
 
+<!-- ══════════ VÍDEO ATENCIÓ PER WHATSAPP ══════════ -->
+<section id="video">
+  <div class="env">
+    <div class="intro apareix cta-central">
+      <div class="hora" style="justify-content:center">04:15 — <span data-es="alguien escribe por WhatsApp" data-en="someone sends a WhatsApp">algú escriu per WhatsApp</span></div>
+      <h2 data-es="Cómo funciona la atención por WhatsApp" data-en="How WhatsApp customer service works">Com funciona l'atenció per WhatsApp</h2>
+      <p class="apagat" data-es="Si lo que más tiempo te quita son los mensajes, empieza por aquí. Un resumen rápido de cómo queda montado." data-en="If messages are what eat most of your time, start here. A quick overview of how it's set up.">Si el que més temps et treu són els missatges, comença per aquí. Un resum ràpid de com queda muntat.</p>
+    </div>
+    <div class="video-marc apareix">
+      <video id="videoSereno" controls preload="metadata" playsinline
+        data-src-ca="sereno-video-ca.mp4" data-src-es="sereno-video-es.mp4" data-src-en="sereno-video-en.mp4">
+        <source src="sereno-video-ca.mp4" type="video/mp4">
+        <span data-es="Tu navegador no puede reproducir el vídeo. Escríbenos por WhatsApp y te enviamos el enlace." data-en="Your browser can't play this video. Message us on WhatsApp and we'll send you the link.">El teu navegador no pot reproduir el vídeo. Escriu-nos per WhatsApp i t'enviem l'enllaç.</span>
+      </video>
+    </div>
+  </div>
+</section>
+
 <!-- ══════════ COM TREBALLEM ══════════ -->
 <section id="como">
   <div class="env">
@@ -1074,6 +1092,13 @@ function canviaIdioma(l){
   });
   document.querySelectorAll('.idioma button').forEach(b => b.classList.toggle('on', b.dataset.lang === l));
   try{ localStorage.setItem('idioma', l); }catch(e){}
+  // vídeo en l'idioma triat
+  const video = document.getElementById('videoSereno');
+  if(video){
+    const nouSrc = video.dataset['src' + l.charAt(0).toUpperCase() + l.slice(1)] || video.dataset.srcCa;
+    const font = video.querySelector('source');
+    if(nouSrc && nouSrc !== font.getAttribute('src')){ font.setAttribute('src', nouSrc); video.load(); }
+  }
   pintaXat();
 }
 
