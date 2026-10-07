@@ -3,9 +3,10 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://serenoautomatiza.com/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://serenoautomatiza.com/"/>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://serenoautomatiza.com/?lang=ca"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://serenoautomatiza.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://serenoautomatiza.com/?lang=es"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://serenoautomatiza.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://serenoautomatiza.com/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
